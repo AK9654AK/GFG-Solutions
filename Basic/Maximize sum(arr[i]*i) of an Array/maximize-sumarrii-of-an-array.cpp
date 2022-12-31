@@ -8,7 +8,7 @@ class Solution{
     int Maximize(int a[],int n)
     {
         int mod=pow(10,9)+7;
-        long long int sum=0;
+        long long int sum=0;  //also this sum, have to be initialised with long long.
         sort(a,a+n);
         for(long long int i=0;i<n;i++){ 
             //we have to declare int as long long otherwise test case will fail.            
