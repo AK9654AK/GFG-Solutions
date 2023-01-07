@@ -21,7 +21,7 @@ public:
             
             if(A[i]>A[i-1]){
                 
-                answer.push_back({i-1,i});             // We have to push into the vector by using {}
+                answer.push_back({i-1,i});             // We have to push into the vector by using {}, and also in the same order as i-1,i;
         }
         
         
