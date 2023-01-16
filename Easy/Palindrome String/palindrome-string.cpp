@@ -6,34 +6,25 @@ using namespace std;
 
 // } Driver Code Ends
 //User function template for C++
-
-
 class Solution{
 public:	
-
-
-
-
-    // palcheck(int i,string )
 	
 	
 	int isPalindrome(string S)
 	{
 	    
+	    int i=0;
+	    int j=S.size()-1;
 	    
-	    
-	    
-	    int i=0;int j=S.size()-1;
-	    if(j==0)return 1;
 	    while(i<j){
-	        
-	        
-	   
-	        if(S[i++]!=S[j--]){
-	            return false;}}
-	       return true;
-
-	        
+	        if(S[i]!=S[j])return false;
+	        else{
+	        i++;
+	        j--;}
+	    }
+	    
+	    return true;
+	    
 	    
 	    
 	}
