@@ -13,7 +13,7 @@ class Solution
     {
          int i =0,j=m-1;
        while(i<n &&j>=0){
-           if(matrix[i][j]==x){
+           if(matrix[i][j]==x){              ////////////////////https://www.youtube.com/watch?v=VS0BcOiKaGI
                return 1;
            }else if(matrix[i][j]>x){
                j--;
