@@ -130,7 +130,7 @@ class Solution
 // void removeLoop(Node* head)
 //     {
 //         Node * ptr = head;
-//         while(ptr<ptr->next){
+//         while(ptr<ptr->next){              //// Only works if the all nodes data is sorted.
 //             ptr = ptr->next;
 //         }
 //         ptr->next = NULL;
