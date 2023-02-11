@@ -83,7 +83,7 @@ int main ()
             cout << -1;
         for (int i = 0; i < res.size (); i++) 
             cout << res[i] << " "; 
-        cout << endl;
+        cout << endl;//
     }
 }
 // } Driver Code Ends
