@@ -32,7 +32,7 @@ class Solution
             }
             // if(cnt.size()==0)
             
-            cnt.erase( unique( cnt.begin(), cnt.end() ), cnt.end() );
+            cnt.erase( unique(cnt.begin(), cnt.end() ), cnt.end() );
             
             return cnt;
             
@@ -51,6 +51,8 @@ class Solution
             
             // return ans;
             
+           
+           //I think we 
             
             
         }
