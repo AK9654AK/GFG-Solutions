@@ -129,55 +129,15 @@ struct Node
 */
 
 //Function to return a list containing the preorder traversal of the tree.
-
-
-
-// If someone is wondering why there solution is not working when they are
-// 
-// declaring a global vector, it cause there are multiple entries for being 
-// made in the vector for different testcases and the array is not 
-// being cleared, use array.clear to clean your array before using that 
-// assign the value of array to a temp vector and return the temp, it should work 
-
-// for reference,
-
-
-
-
-
-// vector<int> arr;
-// void preOrder(Node *root){
-//   if(root == nullptr)
-//       return;
-//   arr.push_back(root->data);;
-//   preOrder(root->left);
-//   preOrder(root->right);
-//   return;
-// }
-
-// vector <int> preorder(Node* root)
-// {
-//  // Your code here
-//  preOrder(root);
-//  vector<int> res = arr;
-//  arr.clear();
-//  return res;
-// }
-
-
-
-
-void PREORDER(Node* root,vector<int> &v){
-    if(root!=NULL){
-        v.push_back(root->data);
-        PREORDER(root->left,v);
-        PREORDER(root->right,v);
-    }
+void pre(Node *root, vector<int>& v) {
+    if (root == NULL) return;
+    v.push_back(root->data);
+    pre(root->left, v);
+    pre(root->right, v);
 }
-vector <int> preorder(Node* root)
-{
-  // Your code here
-  vector<int> v;
-  PREORDER(root,v);
-  return v;
+
+vector<int> preorder(Node* root) {
+    vector<int> v;
+    pre(root, v);
+    return v;
 }
