@@ -6,25 +6,33 @@ using namespace std;
 class Solution
 {
 	public:
-		 vector<string>ans;
-    void solve(string &s,string perm){
-        if(perm.size()==s.size()){
-           if(find(ans.begin(),ans.end(),perm)==ans.end())
-                ans.push_back(perm);
-            return ;
-        }
-        for(char &ch:s)
-            if(ch!=' '){
-                char temp=ch;
-                ch=' ';
-                solve(s,perm+temp);
-                ch=temp;
-            }
-    }
-vector<string>find_permutation(string s)
+void permute(string s,int l,int r,set<string>&st)
 {
-    sort(s.begin(),s.end());
-    solve(s,"");
+    if(l==r)
+    {
+        st.insert(s);
+    }
+    else{
+        for(int i=l;i<=r;i++)
+        {
+            swap(s[l],s[i]);
+            permute(s,l+1,r,st);
+            swap(s[l],s[i]);
+        }
+    }
+}
+vector<string>find_permutation(string S)
+{
+    // Code here there
+    int i=0;
+    int n=S.length()-1;
+    vector<string>ans;
+    set<string>st;
+    permute(S,i,n,st);
+    for(auto it:st)
+    {
+        ans.push_back(it);
+    }
     return ans;
 }
 };
