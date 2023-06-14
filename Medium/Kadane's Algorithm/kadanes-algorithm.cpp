@@ -10,26 +10,24 @@ class Solution{
     // n: size of array
     //Function to find the sum of contiguous subarray with maximum sum.
     long long maxSubarraySum(int arr[], int n){
-        
-        
-        
-        
 
+        int maxsum=0; int currsum=0;
         
-        int maxsum=arr[0]; int currsum=arr[0];
         
-        for(int i=1;i<n;i++){
-            
-            
-            currsum=max(currsum+arr[i],arr[i]);
-            maxsum=max(currsum,maxsum);
         
+       long long int max_so_far=INT_MIN;
+        long long int curr_max=0;
+        for(int i=0;i<n;i++){
+            curr_max+=arr[i];
+            if(curr_max>max_so_far){
+                max_so_far=curr_max;
+            }
+            if(curr_max<0){
+                curr_max=0;
+            }
         }
-        
-        return (long long)maxsum;
-        
-    }
-};
+        return max_so_far;
+    }};
 
 //{ Driver Code Starts.
 
