@@ -13,7 +13,7 @@ class Solution
     int findSum(int A[], int N)
     {
     	int resmin=A[0],resmax=A[0];      // can also use the sort function to sort and then add a[0]and a[N-1];
-    	for(int i=1;i<N;i++){
+    	for(int i=0;i<N;i++){
     	    
     	    if(A[i]>resmax)resmax=A[i];
     	    if(A[i]<resmin)resmin=A[i];   
