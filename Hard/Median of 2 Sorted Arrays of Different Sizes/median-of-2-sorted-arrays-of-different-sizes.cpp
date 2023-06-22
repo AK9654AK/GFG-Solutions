@@ -13,60 +13,40 @@ class Solution{
     public:
     double MedianOfArrays(vector<int>& array1, vector<int>& array2)
     {
-        if(array2.size() < array1.size()) 
-        return MedianOfArrays(array2,array1);
-        
-        int n1 = array1.size();
-        int n2 = array2.size();
-        int low = 0, high = n1;
-        
-        while(low <= high){
-            int cut1 = (low+high) >> 1;
-            int cut2 = (n1+n2+1)/2 - cut1;
-            
-            int left1, left2, right1, right2;
+        int index1 = 0;
+int index2 = 0;
+int med1 = 0;
+int med2 = 0;
 
-if (cut1 == 0) {
-    left1 = INT_MIN;
-} else {
-    left1 = array1[cut1 - 1];
-}
+int num = array1.size();
+int m = array2.size();
 
-if (cut2 == 0) {
-    left2 = INT_MIN;
-} else {
-    left2 = array2[cut2 - 1];
-}
+int divide = (num + m) / 2;
 
-if (cut1 == n1) {
-    right1 = INT_MAX;
-} else {
-    right1 = array1[cut1];
-}
+for (int i = 0; i <= divide; i++) {
+    med1 = med2;
 
-if (cut2 == n2) {
-    right2 = INT_MAX;
-} else {
-    right2 = array2[cut2];
-}
-
-            
-            if(left1 <= right2 && left2 <= right1){
-                if((n1+n2)%2 == 0)
-                return (max(left1,left2)+ min(right1,right2))/2.0;
-                else 
-                return max(left1,left2);
-            }
-            else if(left1 > right2) {
-                high = cut1 - 1;
-            }
-            else {
-                low = cut1 + 1;
-            }
-        }
-    return 0.0;
-    
+    if (index1 == num) {
+        med2 = array2[index2];
+        index2++;
+    } else if (index2 == m) {
+        med2 = array1[index1];
+        index1++;
+    } else if (array1[index1] < array2[index2]) {
+        med2 = array1[index1];
+        index1++;
+    } else {
+        med2 = array2[index2];
+        index2++;
     }
+}
+
+if ((num + m) % 2 == 0) {
+    return (float)(med1 + med2) / 2;
+}
+
+return med2;
+}
 };
 
 //{ Driver Code Starts.
