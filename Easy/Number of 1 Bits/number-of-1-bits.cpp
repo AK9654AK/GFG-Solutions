@@ -6,25 +6,16 @@ using namespace std;
 class Solution {
   public:
     int setBits(int N) {
-        
-        
+        // Write Your Code here
         int count=0;
-        
-        while(N){
-           if(N%2==1)count++;
-          N=N/2;
-
-      }
-            
-            return count;
-            
-            
-        
-        
-        
-        
-        
-        
+        while(N!=0)
+        {
+            int temp = N%2;
+            N/=2;
+            if(temp==1)
+                count++;
+        }
+        return count;
     }
 };
 
