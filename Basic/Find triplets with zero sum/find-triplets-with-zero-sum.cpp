@@ -14,7 +14,7 @@ class Solution{
     //Function to find triplets with zero sum.
     bool findTriplets(int arr[], int n)
     { 
-         sort(arr,arr+n);
+       sort(arr,arr+n);
          for(int i=0;i<=n-1;i++){
              
             int j=i+1;
