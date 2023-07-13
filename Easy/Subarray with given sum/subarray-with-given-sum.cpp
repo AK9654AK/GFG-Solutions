@@ -10,9 +10,6 @@ class Solution
     //Function to find a continuous sub-array which adds up to a given number.
     vector<int> subarraySum(vector<int>arr, int n, long long s)
     {
-        
-        // vector<int> abhi={0};
-        
         if(s==0)return {-1};
         
        
@@ -35,8 +32,6 @@ class Solution
         }
         }
         return {-1};
-        
-        
     }
 };
 
