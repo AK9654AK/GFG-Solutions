@@ -6,38 +6,19 @@ using namespace std;
 class Solution{
     public:
     long long findMinDiff(vector<long long> a, long long n, long long m){
-    
-    
-    //This question was also in the Love Babbar DSA sheet!!!!!!!!
-    
-    
-    int diff=INT_MAX;
-    
-    sort(a.begin(),a.end());
-    
-    
-    for(int i=0;i+m-1<n;i++){
-        
-        int diff2=0;
-        diff2=a[i+m-1]-a[i];
-        
-        diff=min(diff,diff2);
-        
-        
-    }
-    
-    return diff;
-    
-    
-    
-    // https://www.youtube.com/watch?v=T_2CATt_XyQ
-    
-    
-    // https://www.youtube.com/watch?v=50nn3bA1BT4
-    
 
-    
-    
+      sort(a.begin(), a.end());
+
+      long long res = a[m-1]-a[0];
+
+
+      for(long long i=1; i<n-m+1; i++){
+          long long maxVal = a[i+m-1];
+          long long minVal = a[i];
+          
+          res = min(res,maxVal-minVal);
+      }
+      return res;
     }   
 };
 
