@@ -6,7 +6,6 @@ using namespace std;
 class Solution{
     public:
     //Complete this function
-    
     void solve(int i, int n, vector<string>&ans, string &S){
         if(i==n){
             ans.push_back(S);
