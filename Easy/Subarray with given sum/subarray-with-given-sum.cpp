@@ -6,8 +6,7 @@ using namespace std;
 // } Driver Code Ends
 class Solution
 {
-    public:
-    //Function to find a continuous sub-array which adds up to a given number.
+     public:
     vector<int> subarraySum(vector<int>arr, int n, long long s)
     {
         if(s==0)return {-1};
