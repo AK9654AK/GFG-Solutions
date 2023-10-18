@@ -10,22 +10,32 @@ class Solution{
   public:
     int minJumps(int arr[], int n){
         
+        int jump=0;
+        int maxreach=0;
+        int steps=0;
+        
+        for(int i=0;i<n-1;i++){
+            maxreach=max(maxreach,i+arr[i]);
+            
+            if(i==steps){
+                jump++;
+                steps=maxreach;
+            }
+            
+            if(i>=maxreach)return -1;
+            
+            
+            
+        }
         
         
-         int jumps=0;int intr=0;int range=0;
-
-     for(int i=0;i<n-1;i++) {
-
-            range=max(range,i+arr[i]); 
-            if(i==intr) {jumps++;
-           intr=range; 
-                        }
-                        
-                        
-            if(arr[i]==0 && i==range)return -1;
-         
-         }
-return jumps; 
+        
+        
+        
+        return jump;
+        
+        
+        
         
         
         
